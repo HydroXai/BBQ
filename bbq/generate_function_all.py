@@ -49,14 +49,13 @@ def generate_data(cats=None, data_dir='~/BBQ/data_new/', template_dir='/template
     ]
             
     for cat in cats:
-        cat_dir = os.path.join(data_dir, cat)  # Path for each category
-        if not os.path.exists(cat_dir):
-            os.makedirs(cat_dir)
+        if not os.path.exists(data_dir):
+            os.makedirs(data_dir)
 
         template_path = pkg_resources.resource_filename(__name__, f'{template_dir}new_templates - {cat}.csv')
         frames = pd.read_csv(template_path, na_filter=False)
 
-        dat_file_path = os.path.join(cat_dir, f'{cat}.jsonl')
+        dat_file_path = os.path.join(data_dir, f'{cat}.jsonl')
         with io.open(dat_file_path, 'w') as dat_file: # open the file that all the data will be saved in
             the_frames = frames[frames.Ambiguous_Context != ''].reset_index()
             frame_cols = the_frames.columns
