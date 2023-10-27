@@ -363,7 +363,3 @@ def generate_data(cats=None, data_dir='~/BBQ/data_new/', template_dir='/template
                     print("generated %s sentences total for %s" % (str(nn), cat))
 
             dat_file.close()
-
-
-# Example of how to call the function
-generate_data(cats=None, data_dir='~/Develeopment/HydroEvaluation/data_new/')
