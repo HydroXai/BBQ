@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import io
 import json
-from utils import *
+from .utils import *
 import random
 import re
 import ast
