@@ -9,7 +9,7 @@ import ast
 import os
 import pkg_resources
 
-def generate_data(cats=None, data_dir='~/BBQ/data_new/'):
+def generate_data(cats=None, data_dir='~/BBQ/data_new/', template_dir='/templates/'):
     # Expand the user directory
     data_dir = os.path.expanduser(data_dir)
     
@@ -20,7 +20,6 @@ def generate_data(cats=None, data_dir='~/BBQ/data_new/'):
         ]
 
     # Read in vocabulary files
-    template_dir = '/templates/'
     vocab_path = pkg_resources.resource_filename(__name__, f'{template_dir}vocabulary.csv')
     vocab = pd.read_csv(vocab_path)
     vocab = vocab[vocab.Pilot_include != "No"]
