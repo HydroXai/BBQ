@@ -9,10 +9,7 @@ import ast
 import os
 import pkg_resources
 
-def generate_data(cats=None, data_dir='~/BBQ/data_new/', template_dir='/templates/'):
-    # Expand the user directory
-    data_dir = os.path.expanduser(data_dir)
-    
+def generate_data(cats=None, data_dir='~/BBQ/data_new/', template_dir='/templates/'):    
     if cats is None:
         cats = [
             "Disability_status", "Age", "Physical_appearance", "SES", "Gender_identity",
