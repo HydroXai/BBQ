@@ -10,6 +10,9 @@ setup(
     author='Your Name',
     author_email='yihangw@umich.edu',
     url='https://github.com/HydroXai/BBQ',
+    package_data={
+        'bbq': ['templates/*.csv'],  # Replace 'templates/*.csv' with your file patterns
+    },
     install_requires=[
         # List any package dependencies here
         'numpy',
